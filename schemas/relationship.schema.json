@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS-OSINT Relationship",
+  "type": "object",
+  "required": ["relationship_id", "source_entity", "target_entity", "relationship_type", "confidence_level"],
+  "properties": {
+    "relationship_id": { "type": "string" },
+    "source_entity": { "type": "string" },
+    "target_entity": { "type": "string" },
+    "relationship_type": { "type": "string" },
+    "supporting_evidence": { "type": "array", "items": { "type": "string" } },
+    "evidence_date": { "type": ["string", "null"], "format": "date" },
+    "validity_period": {
+      "type": "object",
+      "properties": {
+        "from": { "type": "string", "format": "date" },
+        "to": { "type": ["string", "null"], "format": "date" }
+      }
+    },
+    "confidence_level": { "type": "string", "enum": ["High", "Medium", "Low"] },
+    "notes": { "type": "string" }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS-OSINT Entity",
+  "type": "object",
+  "required": ["entity_id", "entity_type", "name"],
+  "properties": {
+    "entity_id": { "type": "string" },
+    "entity_type": {
+      "type": "string",
+      "enum": ["person_professional", "company", "organization", "media_outlet", "event", "location_public", "other"]
+    },
+    "name": { "type": "string" },
+    "aliases": { "type": "array", "items": { "type": "string" } },
+    "description": { "type": "string" },
+    "attributes": { "type": "object" },
+    "related_evidence": { "type": "array", "items": { "type": "string" } },
+    "first_seen": { "type": "string", "format": "date" },
+    "last_updated": { "type": "string", "format": "date" }
+  }
+}

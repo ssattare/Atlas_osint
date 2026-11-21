@@ -1,0 +1,23 @@
+# ATLAS-OSINT core dependencies
+# Python 3.11+
+
+# DNS & network passive collection
+dnspython>=2.6.0
+
+# HTTP requests
+requests>=2.32.0
+
+# WHOIS / RDAP (prefer modern packages)
+python-whois>=0.9.0
+
+# Data validation
+jsonschema>=4.23.0
+pydantic>=2.8.0
+
+# Optional but recommended
+python-dateutil>=2.9.0
+beautifulsoup4>=4.12.0
+
+# Testing
+pytest>=8.0.0
+pytest-cov>=5.0.0

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atlas-osint.local/schemas/evidence.schema.json",
+  "title": "ATLAS-OSINT Evidence Record",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "claim",
+    "source_name",
+    "collection_date",
+    "verification_status",
+    "confidence_level"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "description": "Unique identifier, recommended format ATLAS-EV-YYYYMMDD-XXXX"
+    },
+    "claim": {
+      "type": "string",
+      "description": "The factual claim this evidence supports or relates to"
+    },
+    "source_name": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": ["string", "null"],
+      "format": "uri"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["official", "media", "corporate", "academic", "social_public", "archive", "registry", "technical", "other"]
+    },
+    "original_source": {
+      "type": ["string", "null"],
+      "description": "If this is a secondary report, the original primary source"
+    },
+    "publication_date": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "event_date": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "collection_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "supporting_evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "contradictory_evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": ["VERIFIED", "PARTIALLY_VERIFIED", "UNVERIFIED", "DISPUTED", "CONTRADICTED"]
+    },
+    "confidence_level": {
+      "type": "string",
+      "enum": ["High", "Medium", "Low", "Insufficient"]
+    },
+    "admiralty_code": {
+      "type": ["string", "null"],
+      "description": "e.g. B2 — source reliability letter + information credibility number"
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "module_origin": {
+      "type": ["string", "null"]
+    }
+  },
+  "additionalProperties": false
+}

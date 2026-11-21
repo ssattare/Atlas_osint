@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS-OSINT Timeline Event",
+  "type": "object",
+  "required": ["timeline_id", "event_date", "event_description"],
+  "properties": {
+    "timeline_id": { "type": "string" },
+    "event_date": { "type": "string", "format": "date" },
+    "event_description": { "type": "string" },
+    "related_entities": { "type": "array", "items": { "type": "string" } },
+    "related_evidence": { "type": "array", "items": { "type": "string" } },
+    "confidence_level": { "type": "string", "enum": ["High", "Medium", "Low"] }
+  }
+}

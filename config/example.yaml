@@ -1,0 +1,14 @@
+# Example configuration for ATLAS-OSINT utilities
+
+collection:
+  timeout_seconds: 15
+  max_results: 200
+
+privacy:
+  allow_residential_addresses: false
+  allow_personal_phones: false
+  professional_only_for_individuals: true
+
+output:
+  default_format: markdown
+  include_evidence_ids: true
