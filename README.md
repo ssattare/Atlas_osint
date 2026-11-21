@@ -85,7 +85,7 @@ ATLAS-OSINT/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/atlas-osint.git
+git clone https://github.com/ssattare/atlas-osint.git
 cd atlas-osint
 ```
 
